@@ -40,7 +40,7 @@
       var view = new MapView({
         container: "viewDiv",   // Where to display the map
         map: map,               // The map to display
-        center: [-118.805, 34.027], // Longitude, Latitude
+        center: [ -91.18001303384762, 30.413424419806038], // Longitude, Latitude
         zoom: 13                // Zoom level
       });
 
@@ -53,8 +53,8 @@
       // Example: Add a marker with a popup on a specific location
       var point = {
         type: "point",
-        longitude: -118.805,
-        latitude: 34.027
+        longitude: -91.18001303384762,
+        latitude: 30.413424419806038
       };
 
       var pointGraphic = new Graphic({
@@ -65,8 +65,8 @@
           size: "12px"
         },
         popupTemplate: {
-          title: "Location",
-          content: "This is a custom marker."
+          title: "LSU",
+          content: "Location of Louisiana State University."
         }
       });
 
