@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArcGIS Dynamic Map</title>
+
+  <!-- ArcGIS CSS -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.26/esri/themes/light/main.css">
+
+  <style>
+    html, body, #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewDiv"></div> <!-- Map container -->
+
+  <!-- ArcGIS JavaScript API -->
+  <script src="https://js.arcgis.com/4.26/"></script>
+  
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/widgets/Search",
+      "esri/Graphic"
+    ], function(Map, MapView, Search, Graphic) {
+      
+      // Create a map with basemap layer
+      var map = new Map({
+        basemap: "streets-navigation-vector" // Try "topo-vector", "satellite", etc.
+      });
+
+      // Create a MapView to display the map
+      var view = new MapView({
+        container: "viewDiv",   // Where to display the map
+        map: map,               // The map to display
+        center: [-118.805, 34.027], // Longitude, Latitude
+        zoom: 13                // Zoom level
+      });
+
+      // Add a Search widget (search for places or addresses)
+      var search = new Search({
+        view: view
+      });
+      view.ui.add(search, "top-right");
+
+      // Example: Add a marker with a popup on a specific location
+      var point = {
+        type: "point",
+        longitude: -118.805,
+        latitude: 34.027
+      };
+
+      var pointGraphic = new Graphic({
+        geometry: point,
+        symbol: {
+          type: "simple-marker",
+          color: "red",
+          size: "12px"
+        },
+        popupTemplate: {
+          title: "Location",
+          content: "This is a custom marker."
+        }
+      });
+
+      // Add the graphic (marker) to the view
+      view.graphics.add(pointGraphic);
+    });
+  </script>
+</body>
+</html>
