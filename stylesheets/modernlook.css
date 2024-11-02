@@ -1,0 +1,182 @@
+/* Reset styles for consistency */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root variables for colors, fonts, and dimensions */
+:root {
+    --primary-color: #6C63FF; /* Deep, elegant purple-blue */
+    --secondary-color: #1A1A2E; /* Dark navy for strong contrast */
+    --background-color: #F3F4F6; /* Soft light background */
+    --accent-color: #FFC947; /* Soft gold for highlights */
+    --font-color: #333333; /* Dark gray for readability */
+    --border-color: #E5E5E5; /* Soft border color */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Light shadow */
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.4s; /* Smooth transition for interactions */
+    --border-radius: 12px; /* Soft rounded edges */
+}
+
+/* Universal body styling */
+body {
+    font-family: var(--font-family);
+    color: var(--font-color);
+    background-color: var(--background-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Main content container */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Elegant header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    box-shadow: 0 4px 12px var(--shadow-color);
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: color var(--transition-speed);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Button styles with elegant hover effects */
+button,
+.btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover,
+.btn:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+/* Card styling for beautiful layout components */
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 20px var(--shadow-color);
+    padding: 30px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography with luxury font sizes and spacing */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    margin-bottom: 20px;
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
+
+/* Form styling with soft focus effects */
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Subtle animations for hover effects */
+a, button, .card {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design for mobile and tablet screens */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
