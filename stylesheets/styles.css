@@ -55,6 +55,14 @@ ul {
 ul li {
     margin-bottom: 10px;
 }
+ul.citation-list {
+    list-style-type: none;
+    padding-left: 20px;
+}
+ul.citation-list li {
+    margin-left: 20px;
+    text-indent: -40px;
+}
 
 /* Footer styling */
 footer {
